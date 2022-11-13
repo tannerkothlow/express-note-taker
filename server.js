@@ -35,7 +35,7 @@ app.post('/api/notes', (req, res) => {
         newNote = {
             title: req.body.title,
             text: req.body.text,
-            note_id: uuid(),
+            id: uuid(),
         };
 
         const noteWriter = new NoteWriter;

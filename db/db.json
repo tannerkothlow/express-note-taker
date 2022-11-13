@@ -2,11 +2,11 @@
     {
         "title": "Test Note 1",
         "text": "Test text",
-        "note_id": "aaaa"
+        "id": "aaaa"
     },
     {
         "title": "Test Post",
         "text": "This is a test",
-        "note_id": "38a4"
+        "id": "38a4"
     }
 ]
