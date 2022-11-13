@@ -24,6 +24,7 @@ app.get('/notes', (req, res) => {
 // Takes notes post request and makes a newNote object
 app.post('/notes', (req, res) => {
     console.log(`${req.method} request recieved.`)
+
     let newNote;
 
     if (req.body && req.body.title) {
@@ -31,6 +32,10 @@ app.post('/notes', (req, res) => {
             title: req.body.title,
             text: req.body.text,
         };
+
+        const noteWriter = new NoteWriter;
+        noteWriter.writeToDB(newNote);
+
         res.json(`Recieved note for ${newNote.title}.`)
     } else {
         res.json(`Note must at least contain a title.`)
