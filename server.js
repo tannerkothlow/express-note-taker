@@ -1,8 +1,9 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const NoteWriter = require('./note-writer.js');
+const NoteWriter = require('./helpers/note-writer.js');
 const db = require('./db/db.json');
+const uuid = require('./helpers/uuid.js');
 //Import fs read/write function from helper js file
 
 const PORT = 3001;
@@ -34,6 +35,7 @@ app.post('/api/notes', (req, res) => {
         newNote = {
             title: req.body.title,
             text: req.body.text,
+            note_id: uuid(),
         };
 
         const noteWriter = new NoteWriter;

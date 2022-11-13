@@ -1,18 +1,12 @@
 [
     {
-        "title": "Test Title 1",
-        "text": "Test text"
-    },
-    {
-        "title": "Test Title 2",
-        "text": "Test text"
-    },
-    {
-        "title": "Test Title 3",
-        "text": "Test text"
+        "title": "Test Note 1",
+        "text": "Test text",
+        "note_id": "aaaa"
     },
     {
         "title": "Test Post",
-        "text": "This is a test"
+        "text": "This is a test",
+        "note_id": "38a4"
     }
 ]
