@@ -25,7 +25,7 @@ app.get('/notes', (req, res) => {
 // Notes API
 app.get('/api/notes', (req, res) => res.json(db));
 // Takes notes post request and makes a newNote object
-app.post('/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
     console.log(`${req.method} request recieved.`)
 
     let newNote;
