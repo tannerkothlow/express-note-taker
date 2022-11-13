@@ -21,6 +21,7 @@ class NoteWriter {
     }
 }
 
+// ================================================TESTS==================================================== //
 // console.log(db);
 // let test = {
 //     title: 'Test Push',
@@ -40,24 +41,25 @@ class NoteWriter {
 //         console.log(parsedDB);
 //     }
 // })
+// ======================================================================================================= //
+// let newNote = {
+//     title: 'Pushed Test Note',
+//     text: 'great'
+// }
 
-let newNote = {
-    title: 'Pushed Test Note',
-    text: 'great'
-}
+// fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         const parsedDB = JSON.parse(data);
+//         parsedDB.push(newNote);
+//         const newDB = JSON.stringify(parsedDB, null , 4);
 
-fs.readFile('./db/db.json', 'utf-8', (err, data) => {
-    if (err) {
-        console.log(err);
-    } else {
-        const parsedDB = JSON.parse(data);
-        parsedDB.push(newNote);
-        const newDB = JSON.stringify(parsedDB, null , 4);
-
-        fs.writeFile('./db/db.json', newDB, 
-        (writeErr) => writeErr ? console.error(writeErr) : console.info(`Succesfully updated note file db.json`)
-        );   
-    }
-});
+//         fs.writeFile('./db/db.json', newDB, 
+//         (writeErr) => writeErr ? console.error(writeErr) : console.info(`Succesfully updated note file db.json`)
+//         );   
+//     }
+// });
+// ========================================================================================================= //
 
 module.exports = NoteWriter;
