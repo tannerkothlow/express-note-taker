@@ -19,6 +19,33 @@ class NoteWriter {
             }
         });
     }
+    // Read db.json, remove note with the inputted id, and then write the new file.
+    removeFromDB(noteID) {
+        fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+            if (err) {
+                console.log(err);
+            } else {
+                let foundNote = false;
+                const parsedDB = JSON.parse(data);
+                for (let i = 0; i < parsedDB.length; i++) {
+                    if (parsedDB[i].id == noteID) {
+                        foundNote = true;
+                        parsedDB.splice(i, 1);
+                    };
+                };
+
+                if (foundNote) {
+                    const newDB = JSON.stringify(parsedDB, null, 4);
+
+                    fs.writeFile('./db/db.json', newDB, 
+                    (writeErr) => writeErr ? console.error(writeErr) : console.info(`Succesfully deleted note ${noteID}`)
+                    );
+                } else {
+                    console.log(`ERROR: No note found with id of ${noteID}`);
+                };
+            };
+        });
+    }
 }
 
 // ================================================TESTS==================================================== //
