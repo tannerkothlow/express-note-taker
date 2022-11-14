@@ -16,7 +16,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Home page 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'))
 });
 // Notes page
@@ -63,7 +63,9 @@ app.post('/api/notes', (req, res) => {
     console.log(req.body);
 });
 // Deletes note based on ID
-// app.delete('/api/notes')
+app.delete('/api/notes/:id', (req, res) => {
+    
+})
 
 app.listen(PORT, () => {
     console.log(`Server hosting at http://localhost:${PORT}`);
