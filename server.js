@@ -66,7 +66,8 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     for (let i = 0; i < db.length; i++) {
         if (db[i].id == req.params.id) {
-            removeFromDB(req.params.id);
+            // removeFromDB(req.params.id);
+            console.log(`${db[i].title} note called for deletion!`);
         }
     }
 })
