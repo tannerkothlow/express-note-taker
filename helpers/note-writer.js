@@ -21,8 +21,6 @@ class NoteWriter {
     }
     // Read db.json, remove note with the inputted id, and then write the new file.
     removeFromDB(noteID) {
-        console.log(`removeFromDB called!`);
-
         fs.readFile('./db/db.json', 'utf-8', (err, data) => {
             if (err) {
                 console.log(err);
@@ -35,7 +33,7 @@ class NoteWriter {
                         parsedDB.splice(i, 1);
                     };
                 };
-                
+
                 if (foundNote) {
                     const newDB = JSON.stringify(parsedDB, null, 4);
 

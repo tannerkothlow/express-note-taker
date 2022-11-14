@@ -64,11 +64,10 @@ app.post('/api/notes', (req, res) => {
 });
 // Deletes note based on ID
 app.delete('/api/notes/:id', (req, res) => {
-    
-    console.log(`Note with an ID of ${req.params.id} called for deletion.`)
-
     const noteRemover = new NoteWriter;
     noteRemover.removeFromDB(req.params.id);
+
+    res.json(`Recieved DELETE request for ${req.params.id}`)
 })
 
 app.listen(PORT, () => {
