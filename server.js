@@ -23,6 +23,21 @@ app.get('/', (req, res) => {
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
+// Returns individual note
+app.get('/notes/:id', (req, res) => {
+    let returnNote;
+    console.log(req.params.id);
+    for(let i = 0; i < db.length; i++) {
+        if (db[i].id == req.params.id) {
+            returnNote = db[i];
+        }
+    }
+    if (returnNote) {
+        res.json(returnNote);
+    } else {
+        res.status(400).send('ERROR: Note not found!')
+    }
+})
 // Notes API
 app.get('/api/notes', (req, res) => res.json(db));
 // Takes notes post request and makes a newNote object
@@ -47,6 +62,8 @@ app.post('/api/notes', (req, res) => {
     }
     console.log(req.body);
 });
+// Deletes note based on ID
+// app.delete('/api/notes')
 
 app.listen(PORT, () => {
     console.log(`Server hosting at http://localhost:${PORT}`);
