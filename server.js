@@ -64,7 +64,11 @@ app.post('/api/notes', (req, res) => {
 });
 // Deletes note based on ID
 app.delete('/api/notes/:id', (req, res) => {
-    
+    for (let i = 0; i < db.length; i++) {
+        if (db[i].id == req.params.id) {
+            removeFromDB(req.params.id);
+        }
+    }
 })
 
 app.listen(PORT, () => {
