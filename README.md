@@ -12,25 +12,27 @@ Application is also deployed to Heroku at https://evening-forest-39312.herokuapp
 
 ## Usage
 
--
+- When starting the app you will be presented with a landing page, simply click on the "Get Started" button to view your notes.
 
 ![home page](./project/images/homescreen.PNG)
 
--
+- The left side bar will hold all previously entered notes and the right entry field will allow you to enter in a new note.
 
 ![note page](./project/images/notepage.PNG)
 
--
+- Once you have entered text in both the title field and text field, a save button will appear in the upper right. Click it to save your note.
 
 ![note enter](./project/images/noteenter.PNG)
 
--
+- Your entered note will now display in the side bar along will all previously entered notes.
 
 ![note bar](./project/images/notebar.PNG)
 
--
+- To view the full contents of your note, click on it from the side bar. The note's title and text will now populate the text entry field.
 
 ![note display](./project/images/notedisplay.PNG)
+
+- To remove a note from the side bar, click on the red trash can icon.
 
 ## Tesing Requests
 
