@@ -6,7 +6,7 @@ const db = require('./db/db.json');
 const uuid = require('./helpers/uuid.js');
 //Import fs read/write function from helper js file
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
