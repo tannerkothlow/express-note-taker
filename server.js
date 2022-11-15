@@ -40,7 +40,7 @@ app.get('/notes/:id', (req, res) => {
 })
 // Notes API
 app.get('/api/notes', (req, res) => {
-    // Redeclares db to update notes.
+    // Reads DB then sends the parsed response, more responsive then just sending a declared variable.
     fs.readFile('./db/db.json', 'utf-8', (err, data) => {
         if (err) {
             console.log(err);
