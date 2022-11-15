@@ -38,7 +38,7 @@ Application is also deployed to Heroku at https://evening-forest-39312.herokuapp
 
 ![note bar](./project/images/notebar.PNG)
 
-- To view the full contents of your note, click on it from the side bar. The note's title and text will now populate the text entry field.
+- To view the full contents of your note, click on it from the side bar. The note's title and text will now populate the text entry field. To clear your note from the larger view and enter a new note, click the plus (**+**) in the upper right.
 
 ![note display](./project/images/notedisplay.PNG)
 
@@ -52,6 +52,6 @@ NOTE: Some functionality may be limitted compared to the full deployed site.
 
 ## License
 ---
-Standard MIT license, coursework.
-Starter code provided by the UofM Full Stack Coding Bootcamp.
+Standard MIT license, coursework. <br>
+Starter code provided by the UofM Full Stack Coding Bootcamp. <br>
 Application hosted by [Heroku](https://www.heroku.com/platform)
