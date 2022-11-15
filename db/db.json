@@ -1,12 +1,22 @@
 [
     {
-        "title": "Test Note 1",
-        "text": "Test text",
+        "title": "Test Note",
+        "text": "test test test",
         "id": "aaaa"
     },
     {
-        "title": "Test Post",
-        "text": "This is a test",
-        "id": "38a4"
+        "title": "Pick up milk",
+        "text": "Don't forget",
+        "id": "e3c7"
+    },
+    {
+        "title": "Shovel the stoop",
+        "text": "Will need a big shovel",
+        "id": "f9e3"
+    },
+    {
+        "title": "Clean the dishes",
+        "text": "Make sure to do it before class today",
+        "id": "5ad6"
     }
 ]

@@ -6,7 +6,7 @@ const db = require('./db/db.json');
 const uuid = require('./helpers/uuid.js');
 //Import fs read/write function from helper js file
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -39,7 +39,18 @@ app.get('/notes/:id', (req, res) => {
     }
 })
 // Notes API
-app.get('/api/notes', (req, res) => res.json(db));
+app.get('/api/notes', (req, res) => {
+    // Reads DB then sends the parsed response, more responsive then just sending a declared variable.
+    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            const updatedDB = JSON.parse(data); 
+            res.json(updatedDB)
+        }
+    });
+    // res.json(updatedDB)
+});
 // Takes notes post request and makes a newNote object
 app.post('/api/notes', (req, res) => {
     console.log(`${req.method} request recieved.`)
