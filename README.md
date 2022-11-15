@@ -12,7 +12,25 @@ Application is also deployed to Heroku at https://evening-forest-39312.herokuapp
 
 ## Usage
 
+-
 
+![home page](./project/images/homescreen.PNG)
+
+-
+
+![note page](./project/images/notepage.PNG)
+
+-
+
+![note enter](./project/images/noteenter.PNG)
+
+-
+
+![note bar](./project/images/notebar.PNG)
+
+-
+
+![note display](./project/images/notedisplay.PNG)
 
 ## Tesing Requests
 
