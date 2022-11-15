@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const NoteWriter = require('./helpers/note-writer.js');
-// const db = require('./db/db.json');
+const db = require('./db/db.json');
 const uuid = require('./helpers/uuid.js');
 //Import fs read/write function from helper js file
 
@@ -41,8 +41,15 @@ app.get('/notes/:id', (req, res) => {
 // Notes API
 app.get('/api/notes', (req, res) => {
     // Redeclares db to update notes.
-    const db = require('./db/db.json');
-    res.json(db)
+    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            const updatedDB = JSON.parse(data); 
+            res.json(updatedDB)
+        }
+    });
+    // res.json(updatedDB)
 });
 // Takes notes post request and makes a newNote object
 app.post('/api/notes', (req, res) => {

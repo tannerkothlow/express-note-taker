@@ -1,10 +1,5 @@
 [
     {
-        "title": "Test Note 1",
-        "text": "Test text",
-        "id": "aaaa"
-    },
-    {
         "title": "Test Post",
         "text": "This is a test",
         "id": "38a4"
