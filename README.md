@@ -10,10 +10,6 @@ First order of business was to link the public folder. That way only the actual 
 
 Finally for the API requests we needed GET requests for all the notes and a note with a particular id, and the API POST request would serve as the main note taking function, reading, appending, and writing new notes to the file. No fancy tricks or anything really, just sending the appropriate data per each request. Although one interesting "hack" was in order to send the most up to date version of db.json, it must be read using fs, parsed, and then sent. Otherwise it would send the db constant declared on server initialization. This worked between reloads, but not mid session. Finally the DELETE request was pretty simple to do as a bonus. Turns out DELETE requests aren't all that different from GET or POST requests, it's just another labeling that the server uses to discern incoming calls. So to make the DELETE logic, all I really did was take the write file helper function and tweaked a few things to remove an object from the array instead of adding it. After some bug squashing, our back end was complete!
 
-## Aside
-
-I'm not going to lie here, the preview of the application I was getting from Insomnia was missing about half the functionality the deployed website was supposed to have, and opening index.html in the default browser doesn't work due to the front end script polymorphism checking the url to see if it should run functions for index.html or notes.html. All the requests I tested worked just fine though. So when deploying it to Heroku I had to put complete blind faith into there being some limitations to what Insomnia can display. I was expecting it to be a complete flop and I'd have to submit everything half finished with a demo video showing that all my requests do in fact function but I suppose that isn't necessary anymore. So moral the of the story is sometimes everything just decides to work for reasons unknown.
-
 ## Installation
 
 Once you have cloned the repo to your machine, run **npm i** to install all the necessary dependencies.
